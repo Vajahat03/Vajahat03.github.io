@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Confession</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            background-image: url('/floral-background-with-red-heart_1048-788.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            
+        }
+        #noButton {
+            position: absolute;
+            font-size: 30px;
+            color: red;
+            border-radius: 30%;
+            border: none;
+            padding: 15px;
+        }
+        #yesButton{
+           
+            font-size: 20px;
+            color: red;
+            border-radius: 30px;
+            border: none;
+            padding: 15px;
+            margin-right: 40px;
+
+        }
+        .dark-mode {
+            background-image: url('/pain.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+        }
+        
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I LOVE YOU</h1>
+        <p>Do you love me?</p>
+        <div class="button">
+            <button id="yesButton">I love you too</button>
+            <button id="noButton">No</button>
+        </div>
+        
+    </div>
+
+    <div class="message" id="message">
+        <h1>Sister, stay modest and halal. There is no barakah in this haram relationship.</h1>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+        const message = document.getElementById('message');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        yesButton.addEventListener('click', () => {
+            document.body.classList.add('dark-mode');
+            message.style.display = 'block';
+            document.querySelector('.container').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
